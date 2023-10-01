@@ -20,7 +20,7 @@ def handle_data(seis, data):
 
 if __name__ == "__main__":
     tvl = initialize_tv_datafeed()
-    symbol = 'EURUSD'
+    symbol = 'GBPUSD'
     exchange = 'OANDA'
     interval = Interval.in_1_minute
 

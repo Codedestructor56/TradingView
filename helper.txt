@@ -1,20 +1,18 @@
-close=list(data["close"])
+time.sleep(5)
 
-    cross_above = np.where(sma_value_trend[:-1] < close[sma_length:], 1, 0)
-    cross_below = np.where(sma_value_trend[:-1] > close[sma_length:], 1, 0)
-    trend = np.where(cross_above, 1, np.where(cross_below, -1, 0))
-
-    trend_label = np.where(trend == 1, "Uptrend", np.where(trend == -1, "Downtrend", "Consolidation"))
-
-    arrows = go.Scatter(x=data.index,
-                        y=arrows,  # Replace with your arrow data
-                        mode='markers+text',
-                        marker=dict(symbol='triangle-up' if arrows == 1 else 'triangle-down' if arrows == -1 else '',
-                                    size=10, color='black'),
-                        textposition='bottom center',
-                        name='Arrows')
-    fig.add_trace(arrows, row=5, col=1)
-
-    # Update layout and show the figure
-    fig.update_layout(title='Live Candlestick Chart',
-                      xaxis_rangeslider_visible=False)
+if username_field:
+    pyautogui.click(username_field)
+    pyautogui.typewrite("richardfeynman438@gmail.com")
+time.sleep(2)
+if password_field:
+    pyautogui.click(password_field)
+    time.sleep(2)
+    pyautogui.typewrite("numpy2003")
+if Log_in_button:
+    pyautogui.click(Log_in_button)
+    time.sleep(2)
+    pyautogui.hotkey("ctrl","l")
+    pyautogui.typewrite(url)
+    pyautogui.press("enter")
+else:
+    print("Username field, password field, or Log In button not found.")
