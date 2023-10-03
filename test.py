@@ -19,9 +19,9 @@ option_new_lower=(1357,491)
 wider_upper=(1245,213)
 wider_lower=(1365,443)
 
-binomo_username=(628,444)
-binomo_password=(628,523)
-binomo_login=(671,636)
+binomo_username=(662,463)
+binomo_password=(662,539)
+binomo_login=(665,648)
 
 add_option=(250,167)
 add_option_search=(336,307)
@@ -39,6 +39,13 @@ curr_balance_dest=(1164,180)
 release=(1195,421)
 go_up=(1263,537)
 go_down=(1261,595)
+
+demo_acc=(1036,264)
+real_acc=(1036,229)
+trade_message=(672,548)
+
+time_increase=(1332,303)
+time_decrease=(1332,329)
 #while True:
     #x, y = pyautogui.position()
     #print(f"Mouse coordinates: X={x}, Y={y}")
