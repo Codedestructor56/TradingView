@@ -40,6 +40,8 @@ release=(1195,421)
 go_up=(1263,537)
 go_down=(1261,595)
 
+acc_type_src=(1072,159)
+acc_type_dest=(1152,159)
 demo_acc=(1036,264)
 real_acc=(1036,229)
 trade_message=(672,548)

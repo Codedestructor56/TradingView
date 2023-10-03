@@ -8,7 +8,8 @@ import datetime
 info_src={'amount':[amt_src,amt_dest],
           'time':[time_source,time_dest],
           'earnings':[earnings_source,earnings_dest],
-          'curr_bal':[curr_balance_source,curr_balance_dest]}
+          'curr_bal':[curr_balance_source,curr_balance_dest],
+          'acc_type':[acc_type_src,acc_type_dest]}
 
 def copy_text(source,destination):
 
@@ -47,6 +48,7 @@ def get_curr_info(coord_dict):
     text = re.sub(r'\s', '', text)
     text = re.sub(r'\$', '', text)
     info_list.append(text)
+    info_list.append(copy_text(coord_dict['acc_type'][0],coord_dict['acc_type'][1]))
     pyautogui.click(release)
     return info_list
 
