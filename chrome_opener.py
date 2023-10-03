@@ -9,11 +9,12 @@ def open_binomo(email,password):
     os.system(chrome_command)
     time.sleep(1) 
     url = "https://binomoidr.com/trading" 
+    pyautogui.move(binomo_login)
     pyautogui.hotkey("ctrl", "l")  
     pyautogui.typewrite(url) 
     pyautogui.press("enter")  
 
-    time.sleep(20)
+    time.sleep(15)
     try:
         if binomo_username:
             pyautogui.click(binomo_username)

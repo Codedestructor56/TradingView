@@ -4,6 +4,8 @@ import threading
 import pinescript as p
 from options_utils import *
 from chrome_opener import *
+
+pyautogui.FAILSAFE = False
 def initialize_tv_datafeed():
     username = input("Enter your TradingView username (Press Enter to skip): ").strip()
     password = input("Enter your TradingView password (Press Enter to skip): ").strip()
@@ -62,7 +64,7 @@ if __name__ == "__main__":
     print('''Please remove anything which covers the binomo dashboard from the screen
           within 10 seconds, minimization is an option.''')
     
-    time.sleep(10)
+    time.sleep(30)
     curr_state=get_curr_info(info_src)
     curr_stats_print(curr_state)
     if input("Do you want to switch your account?[y/N]: ").capitalize()=="Y":
@@ -91,6 +93,7 @@ if __name__ == "__main__":
         reload_thread = threading.Thread(target=reload_webpage, args=(last_reload_time,))
         reload_thread.daemon = True
         reload_thread.start()
+        
         data = tvl.get_hist(symbol=symbol, exchange=selected_exchange, interval=interval, n_bars=10)
         result=p.apply_transformation(data)
         print(data)
@@ -102,5 +105,5 @@ if __name__ == "__main__":
             time.sleep(4)
             place_trade(int(result["arrows"][0]))
         # Wait for 2 minutes before the next iteration
-        time.sleep(120)
+        time.sleep(60)
 
